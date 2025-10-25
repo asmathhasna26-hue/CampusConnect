@@ -14,22 +14,22 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Database
+// Connect MongoDB
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error("❌ MongoDB Error:", err));
 
-// Routes
+// API Routes
 app.use("/api/events", eventRoutes);
 app.use("/api/announcements", announcementRoutes);
 app.use("/api/faculty", facultyRoutes);
 app.use("/api/contact", contactRoutes);
 
-// Root (for testing)
+// Root route for testing
 app.get("/", (req, res) => {
   res.send("CampusConnect API is running 🚀");
 });
 
-// Export for Vercel
+// Vercel export
 export default app;
