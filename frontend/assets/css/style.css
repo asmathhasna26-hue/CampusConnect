@@ -1,0 +1,282 @@
+/* ===== CampusConnect - Modern Green Theme ===== */
+:root {
+  --green: #00a86b;
+  --green-dark: #007a50;
+  --light-green: #e3f8ef;
+  --white: #ffffff;
+  --gray: #f5f7fa;
+  --text: #1a1a1a;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+body {
+  background: var(--gray);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--white);
+  padding: 1rem 5%;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--green-dark);
+}
+.logo span {
+  color: var(--green);
+}
+
+nav a {
+  margin-left: 1.2rem;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+nav a:hover,
+nav a.active {
+  color: var(--green);
+}
+
+.btn-primary {
+  background: var(--green);
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+}
+.btn-secondary {
+  border: 2px solid var(--green);
+  color: var(--green);
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  background: var(--green);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--light-green), #fafffc);
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 168, 107, 0.2), transparent 70%);
+  animation: pulse 6s infinite alternate ease-in-out;
+}
+@keyframes pulse {
+  0% {opacity: 0.7; transform: scale(1);}
+  100% {opacity: 1; transform: scale(1.1);}
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+}
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--green-dark);
+  margin-bottom: 1rem;
+}
+.hero h1 span {
+  color: var(--green);
+}
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Features */
+.features {
+  background: var(--white);
+  padding: 4rem 10%;
+  text-align: center;
+}
+.features h2 {
+  color: var(--green-dark);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.feature-card {
+  background: var(--light-green);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 168, 107, 0.25);
+}
+.feature-card .icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.feature-card h3 {
+  color: var(--green-dark);
+  margin-bottom: 0.5rem;
+}
+
+/* Announcements */
+.announcements-section {
+  padding: 4rem 10%;
+  text-align: center;
+}
+.announcements-section h2 {
+  color: var(--green-dark);
+  font-size: 2rem;
+}
+.section-sub {
+  color: #555;
+  margin-bottom: 1rem;
+}
+.announcement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.announcement-card {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+.announcement-card h4 {
+  color: var(--green-dark);
+  margin-bottom: 0.3rem;
+}
+
+/* Stats Section */
+.stats-section {
+  background: linear-gradient(90deg, var(--green-dark), var(--green));
+  color: var(--white);
+  padding: 3rem 10%;
+  text-align: center;
+}
+.stats-section h2 {
+  margin-bottom: 1.5rem;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+}
+.stat-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+.stat-card h3 {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+/* Newsletter */
+.newsletter {
+  background: var(--white);
+  padding: 4rem 10%;
+  text-align: center;
+}
+.newsletter h2 {
+  color: var(--green-dark);
+  margin-bottom: 0.5rem;
+}
+.newsletter form {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.newsletter input {
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  min-width: 260px;
+}
+
+/* Footer */
+.footer {
+  background: var(--green-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  font-weight: 500;
+}
+
+/* Animations */
+.fade-up {animation: fadeUp 1s ease forwards;}
+.fade-up-delay {animation: fadeUp 1.4s ease forwards;}
+.zoom-in {animation: zoomIn 1s ease;}
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+@keyframes zoomIn {
+  from {opacity: 0; transform: scale(0.9);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar nav a {margin-left: 0.6rem; font-size: 0.9rem;}
+  .hero h1 {font-size: 1.9rem;}
+  .stats-grid {gap: 1rem;}
+}

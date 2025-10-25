@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusConnect | Contact</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* === Premium Contact Page Styling === */
+    :root {
+      --green: #00a86b;
+      --green-dark: #007a50;
+      --light-green: #e3f8ef;
+      --white: #ffffff;
+      --gray: #f5f7fa;
+      --text: #1a1a1a;
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--light-green), #fafffc);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Floating animation background */
+    .bg-circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+      z-index: 0;
+      animation: float 10s infinite alternate ease-in-out;
+    }
+    .circle1 { width: 300px; height: 300px; background: var(--green); top: 10%; left: -10%; animation-delay: 0s; }
+    .circle2 { width: 400px; height: 400px; background: var(--green-dark); bottom: -10%; right: -10%; animation-delay: 2s; }
+
+    @keyframes float {
+      from { transform: translateY(0px); }
+      to { transform: translateY(40px); }
+    }
+
+    /* Contact Header */
+    .page-header {
+      position: relative;
+      padding: 4rem 10%;
+      text-align: center;
+      z-index: 2;
+    }
+    .page-header h1 {
+      font-size: 2.5rem;
+      color: var(--green-dark);
+      font-weight: 800;
+      position: relative;
+    }
+    .page-header h1::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      margin: 1rem auto 0;
+      background: var(--green);
+      border-radius: 2px;
+    }
+
+    /* Contact Form */
+    .form-section {
+      position: relative;
+      z-index: 2;
+      padding: 2rem 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .contact-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: var(--shadow);
+      animation: fadeUp 1s ease forwards;
+    }
+    .contact-card h2 {
+      text-align: center;
+      color: var(--green-dark);
+      margin-bottom: 1rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea {
+      padding: 0.8rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      resize: none;
+    }
+    button {
+      background: var(--green);
+      color: var(--white);
+      padding: 0.8rem;
+      border-radius: 10px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+    #form-status {
+      text-align: center;
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--green-dark);
+      color: var(--white);
+      padding: 3rem 10%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .footer-col h3 {
+      color: var(--light-green);
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-col a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 0.3rem;
+      opacity: 0.8;
+      transition: all 0.2s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--light-green);
+      opacity: 1;
+      transform: translateX(3px);
+    }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .contact-card { padding: 1.5rem; }
+      .footer { padding: 2rem 5%; }
+    }
+  </style>
+  <script defer src="assets/js/script.js"></script>
+</head>
+
+<body>
+  <!-- Animated background circles -->
+  <div class="bg-circle circle1"></div>
+  <div class="bg-circle circle2"></div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">🎓 CampusConnect</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="announcements.html">Announcements</a>
+      <a href="faculty.html">Faculty</a>
+      <a href="contact.html" class="active btn-primary">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Header -->
+  <section class="page-header">
+    <h1>Contact Administration</h1>
+  </section>
+
+  <!-- Contact Card -->
+  <section class="form-section">
+    <div class="contact-card">
+      <h2>We’d Love to Hear From You</h2>
+      <form id="contact-form">
+        <input type="text" id="name" placeholder="Your Full Name" required />
+        <input type="email" id="email" placeholder="Your Email Address" required />
+        <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+        <p id="form-status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>CampusConnect</h3>
+        <p>Your one-stop platform for campus updates, events, and communication.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <a href="events.html">Events</a>
+        <a href="announcements.html">Announcements</a>
+        <a href="faculty.html">Faculty</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Get in Touch</h3>
+        <p>Email: connect@campus.edu</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>Location: Greenfield College, Bengaluru</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 CampusConnect — Built for Modern Campuses 🌿</p>
+    </div>
+  </footer>
+</body>
+</html>
